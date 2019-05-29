@@ -3,11 +3,13 @@
 @import fonts.sass
 @import grid.sass
 @import '../../libs/fancybox/dist/jquery.fancybox.css'
+@import '../../libs/slick-carousel/slick/slick.css'
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&display=swap&subset=cyrillic')
 
 
 /* Global settings */
 $font-size: 16px
-$font-family-1: 'Tahoma', sans-serif
+$font-family-1: 'PT Sans', sans-serif
 $color-1: #000
 
 
@@ -52,6 +54,8 @@ input
 	-webkit-appearance: none
 	-moz-appearance: none
 	appearance: none
+	font-size: $font-size
+	font-family: $font-family-1
 
 input, textarea, button
  outline: none
@@ -115,8 +119,147 @@ input, .btn, .slick-slide, textarea
 	// overflow-x: hidden
 
 
+.panel
+	padding-top: 18px
+	padding-bottom: 16px
+	&__logo
+		width: 250px
+	&__search
+		width: 260px
+		margin-top: 30px
+	&__contacts
+		padding-top: 30px
 
 
+.search
+	position: relative
+	input
+		border-bottom: 2px solid #066aaa
+		padding-bottom: 6px
+		padding-right: 26px
+		width: 100%
+		display: block
+		&::placeholder
+			font-style: italic
+	button
+		width: 19px
+		height: 19px
+		right: 0
+		top: 0
+		position: absolute
+		z-index: 1
+		background: url('../../img/search.png') no-repeat center
+		
 
+.b-contacts
+	text-align: right
+	letter-spacing: 0.08px
+	&__line
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-end
+		margin-bottom: 9px
+		&:last-of-type
+			margin-bottom: 0
+	&__socials, &__email
+		a
+			color: #187dbe
+	&__socials
+		margin-right: 60px
+		li
+			margin-right: 24px
+			&:last-of-type
+				margin-right: 0
+		a
+			border-bottom: 1px dashed transparent
+			&:hover
+				border-color: #187dbe
+	&__lang
+		color: #727272
+		li
+			margin-right: 10px
+			&:last-of-type
+				margin-right: 0
+		a
+			&:hover
+				border-color: $color-1
+	&__email
+		a
+			border-bottom: 1px dashed #187dbe
+			&:hover
+				border-color: transparent
+
+
+.nav
+	&__list
+		background-color: #066aaa
+		border-radius: 4px
+		text-align: center
+		a
+			color: #fff
+		> ul
+			justify-content: center
+			> li
+				position: relative
+				transition: .3s
+				> a
+					position: relative
+					padding: 17px 26.5px
+					display: block
+				&:hover
+					background-color: #2f8bc5
+				&.selected
+					> a
+						background-color: #2f8bc5
+				&.has-drop
+					> a
+						&:after
+							margin-left: 6px
+							display: inline-block
+							vertical-align: middle
+							content: ''
+							width: 0
+							height: 0
+							border-style: solid
+							border-width: 6px 4.5px 0 4.5px
+							border-color: #ffffff transparent transparent transparent
+
+					&:hover
+						> ul
+							opacity: 1
+							transform: translateY(0)
+							visibility: visible
+				&:first-of-type
+						border-radius: 4px 0 0 4px
+				&:last-of-type
+						border-radius: 0 4px 4px 0
+				> ul
+					position: absolute
+					top: 100%
+					left: 0
+					text-align: left
+					border: 1px solid #ffffff
+					z-index: 1
+					background-color: #2f8bc5
+					min-width: 145px
+					max-width: 200px
+					padding: 20px 25px
+					visibility: hidden
+					transform: translateY(50px)
+					opacity: 0
+					transition: .3s
+					> li
+						width: 100%
+						margin-bottom: 2px
+						&:last-of-type
+							margin-bottom: 0
+						> a
+							display: inline-block
+							&:hover
+								border-color: #fff
+
+
+.hello
+	background-color: #f2fbff
 .hidden-lg
 	display: none

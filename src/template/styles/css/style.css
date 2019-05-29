@@ -1,6 +1,8 @@
 /* Including styles files */
 /* Including fonts */
 @import url(../../libs/fancybox/dist/jquery.fancybox.css);
+@import url(../../libs/slick-carousel/slick/slick.css);
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&display=swap&subset=cyrillic");
 @font-face {
   font-family: "";
   src: url("../../fonts/");
@@ -10,7 +12,7 @@
 /* Grid */
 .case {
   position: relative;
-  width: 1200px;
+  width: 1150px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto; }
@@ -124,7 +126,7 @@
 
 body {
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "PT Sans", sans-serif;
   color: #000;
   background: white; }
 
@@ -165,7 +167,9 @@ img {
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none; }
+  appearance: none;
+  font-size: 16px;
+  font-family: "PT Sans", sans-serif; }
 
 input, textarea, button {
   outline: none; }
@@ -176,7 +180,7 @@ input, textarea, button {
   .input__wrap {
     display: block;
     font-size: 16px;
-    font-family: "Tahoma", sans-serif;
+    font-family: "PT Sans", sans-serif;
     background: white;
     width: 100%; }
 
@@ -185,7 +189,7 @@ input, textarea, button {
   .textarea__wrap {
     display: block;
     font-size: 16px;
-    font-family: "Tahoma", sans-serif;
+    font-family: "PT Sans", sans-serif;
     background: white;
     width: 100%;
     resize: none; }
@@ -205,7 +209,7 @@ input, textarea, button {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 16px;
-  font-family: "Tahoma", sans-serif;
+  font-family: "PT Sans", sans-serif;
   cursor: pointer;
   text-align: center;
   -webkit-transition: .3s;
@@ -231,6 +235,162 @@ input, .btn, .slick-slide, textarea {
 .mid {
   margin-left: auto;
   margin-right: auto; }
+
+.panel {
+  padding-top: 18px;
+  padding-bottom: 16px; }
+  .panel__logo {
+    width: 250px; }
+  .panel__search {
+    width: 260px;
+    margin-top: 30px; }
+  .panel__contacts {
+    padding-top: 30px; }
+
+.search {
+  position: relative; }
+  .search input {
+    border-bottom: 2px solid #066aaa;
+    padding-bottom: 6px;
+    padding-right: 26px;
+    width: 100%;
+    display: block; }
+    .search input::-webkit-input-placeholder {
+      font-style: italic; }
+    .search input::-moz-placeholder {
+      font-style: italic; }
+    .search input:-ms-input-placeholder {
+      font-style: italic; }
+    .search input::placeholder {
+      font-style: italic; }
+  .search button {
+    width: 19px;
+    height: 19px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    background: url("../../img/search.png") no-repeat center; }
+
+.b-contacts {
+  text-align: right;
+  letter-spacing: 0.08px; }
+  .b-contacts__line {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-bottom: 9px; }
+    .b-contacts__line:last-of-type {
+      margin-bottom: 0; }
+  .b-contacts__socials a, .b-contacts__email a {
+    color: #187dbe; }
+  .b-contacts__socials {
+    margin-right: 60px; }
+    .b-contacts__socials li {
+      margin-right: 24px; }
+      .b-contacts__socials li:last-of-type {
+        margin-right: 0; }
+    .b-contacts__socials a {
+      border-bottom: 1px dashed transparent; }
+      .b-contacts__socials a:hover {
+        border-color: #187dbe; }
+  .b-contacts__lang {
+    color: #727272; }
+    .b-contacts__lang li {
+      margin-right: 10px; }
+      .b-contacts__lang li:last-of-type {
+        margin-right: 0; }
+    .b-contacts__lang a:hover {
+      border-color: #000; }
+  .b-contacts__email a {
+    border-bottom: 1px dashed #187dbe; }
+    .b-contacts__email a:hover {
+      border-color: transparent; }
+
+.nav__list {
+  background-color: #066aaa;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  text-align: center; }
+  .nav__list a {
+    color: #fff; }
+  .nav__list > ul {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .nav__list > ul > li {
+      position: relative;
+      -webkit-transition: .3s;
+      transition: .3s; }
+      .nav__list > ul > li > a {
+        position: relative;
+        padding: 17px 26.5px;
+        display: block; }
+      .nav__list > ul > li:hover {
+        background-color: #2f8bc5; }
+      .nav__list > ul > li.selected > a {
+        background-color: #2f8bc5; }
+      .nav__list > ul > li.has-drop > a:after {
+        margin-left: 6px;
+        display: inline-block;
+        vertical-align: middle;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 4.5px 0 4.5px;
+        border-color: #ffffff transparent transparent transparent; }
+      .nav__list > ul > li.has-drop:hover > ul {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+                transform: translateY(0);
+        visibility: visible; }
+      .nav__list > ul > li:first-of-type {
+        -webkit-border-radius: 4px 0 0 4px;
+                border-radius: 4px 0 0 4px; }
+      .nav__list > ul > li:last-of-type {
+        -webkit-border-radius: 0 4px 4px 0;
+                border-radius: 0 4px 4px 0; }
+      .nav__list > ul > li > ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: left;
+        border: 1px solid #ffffff;
+        z-index: 1;
+        background-color: #2f8bc5;
+        min-width: 145px;
+        max-width: 200px;
+        padding: 20px 25px;
+        visibility: hidden;
+        -webkit-transform: translateY(50px);
+            -ms-transform: translateY(50px);
+                transform: translateY(50px);
+        opacity: 0;
+        -webkit-transition: .3s;
+        transition: .3s; }
+        .nav__list > ul > li > ul > li {
+          width: 100%;
+          margin-bottom: 2px; }
+          .nav__list > ul > li > ul > li:last-of-type {
+            margin-bottom: 0; }
+          .nav__list > ul > li > ul > li > a {
+            display: inline-block; }
+            .nav__list > ul > li > ul > li > a:hover {
+              border-color: #fff; }
+
+.hello {
+  background-color: #f2fbff; }
 
 .hidden-lg {
   display: none; }
