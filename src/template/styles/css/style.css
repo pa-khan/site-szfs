@@ -622,6 +622,8 @@ input, .btn, .slick-slide, textarea {
 
 .breadcrumbs {
   font-size: 14px; }
+  .breadcrumbs_hidden {
+    display: none; }
   .breadcrumbs a {
     color: #066aaa; }
     .breadcrumbs a:hover {
@@ -762,6 +764,11 @@ input, .btn, .slick-slide, textarea {
     top: 7px;
     left: 0; }
 
+.text p {
+  margin-bottom: 20px; }
+  .text p:last-of-type {
+    margin-bottom: 0; }
+
 .text a {
   color: #066aaa; }
   .text a:hover {
@@ -788,7 +795,7 @@ input, .btn, .slick-slide, textarea {
   padding: 22px 35px 20px; }
 
 .tenders__search {
-  width: 345px; }
+  max-width: 345px; }
   .tenders__search input {
     color: #066aaa; }
     .tenders__search input::-webkit-input-placeholder {
@@ -1047,7 +1054,8 @@ input, .btn, .slick-slide, textarea {
     font-weight: 700;
     margin-bottom: 23px; }
   .page404__search-wrap {
-    width: 450px; }
+    max-width: 450px;
+    width: 100%; }
 
 .events__item {
   display: -webkit-box;
@@ -1098,20 +1106,22 @@ input, .btn, .slick-slide, textarea {
     width: 50%;
     padding-top: 45px;
     padding-bottom: 45px;
-    border-bottom: 1px solid #d2edff; }
+    border-bottom: 1px solid #d2edff;
+    padding-right: 10px; }
     .docs__item:hover .docs__title {
       border-color: #000; }
   .docs__icon {
     width: 80px; }
   .docs__title {
+    display: inline;
     font-weight: 700;
-    margin-bottom: 5px;
     -webkit-transition: .3s;
     transition: .3s;
     border-bottom: 1px solid transparent; }
   .docs__date {
     font-size: 14px;
-    color: #8b8b8b; }
+    color: #8b8b8b;
+    margin-top: 15px; }
 
 .persons {
   margin-top: -70px; }
@@ -1132,7 +1142,10 @@ input, .btn, .slick-slide, textarea {
       border-bottom: none; }
   .persons__img {
     width: 220px;
-    height: 190px; }
+    height: 190px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
   .persons__content {
     padding-left: 28px;
     width: -webkit-calc(100% - 220px);
@@ -1411,6 +1424,32 @@ input, .btn, .slick-slide, textarea {
     margin-top: 35px; }
   .search-page__false {
     margin-top: 50px; }
+
+.popup {
+  display: none;
+  font-family: "PT Sans", sans-serif; }
+  .popup_blue {
+    color: #fff;
+    background-color: #066aaa; }
+    .popup_blue .fancybox-close-small {
+      color: #fff; }
+  .popup_small {
+    width: 420px;
+    padding: 30px 55px 50px; }
+  .popup__title {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px; }
+
+.form__input {
+  margin-bottom: 12px; }
+
+.form__input, .form__btn {
+  width: 100%; }
+
+.hidden-phones {
+  display: none; }
 
 .footer {
   color: #fff;

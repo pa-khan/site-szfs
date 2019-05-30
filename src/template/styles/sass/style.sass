@@ -475,6 +475,8 @@ input, .btn, .slick-slide, textarea
 
 .breadcrumbs
 	font-size: 14px
+	&_hidden
+		display: none
 	a
 		color: #066aaa
 		&:hover
@@ -603,7 +605,10 @@ input, .btn, .slick-slide, textarea
 				position: absolute
 				top: 7px
 				left: 0
-
+	p
+		margin-bottom: 20px
+		&:last-of-type
+			margin-bottom: 0
 	a
 		color: #066aaa
 		&:hover
@@ -635,7 +640,7 @@ input, .btn, .slick-slide, textarea
 		background-color: #f2fbff
 		padding: 22px 35px 20px
 	&__search
-		width: 345px
+		max-width: 345px
 		input
 			color: #066aaa
 			&::placeholder
@@ -875,7 +880,8 @@ input, .btn, .slick-slide, textarea
 			font-weight: 700
 			margin-bottom: 23px
 		&-wrap
-			width: 450px
+			max-width: 450px
+			width: 100%
 
 
 .events
@@ -919,6 +925,7 @@ input, .btn, .slick-slide, textarea
 		padding-top: 45px
 		padding-bottom: 45px
 		border-bottom: 1px solid #d2edff
+		padding-right: 10px
 		&:hover
 			.docs
 				&__title
@@ -927,14 +934,15 @@ input, .btn, .slick-slide, textarea
 		width: 80px
 
 	&__title
+		display: inline
 		font-weight: 700
-		margin-bottom: 5px
 		transition: .3s
 		border-bottom: 1px solid transparent
 
 	&__date
 		font-size: 14px
 		color: #8b8b8b
+		margin-top: 15px
 
 
 
@@ -956,6 +964,9 @@ input, .btn, .slick-slide, textarea
 	&__img
 		width: 220px
 		height: 190px
+		background-position: center
+		background-repeat: no-repeat
+		background-size: cover
 	&__content
 		padding-left: 28px
 		width: calc(100% - 220px)
@@ -1258,6 +1269,34 @@ input, .btn, .slick-slide, textarea
 		
 	&__false
 		margin-top: 50px
+
+
+.popup
+	display: none
+	font-family: $font-family-1
+	&_blue
+		color: #fff
+		background-color: #066aaa
+		.fancybox-close-small
+			color: #fff
+	&_small
+		width: 420px
+		padding: 30px 55px 50px
+
+	&__title
+		font-size: 30px
+		font-weight: 700
+		text-align: center
+		margin-bottom: 25px
+
+.form
+	&__input
+		margin-bottom: 12px
+	&__input, &__btn
+		width: 100%
+
+.hidden-phones
+	display: none
 
 
 .footer
